@@ -103,6 +103,7 @@ console.log(error);
             return res.status(200).cookie("token",token,{maxAge:1*24*60*60*1000,httpOnly:true,
                 sameSite:'lax'}).json({
                 message:`Welcome back ${user.fullname}`,
+                token,
                 user,
                 success:true
             });
