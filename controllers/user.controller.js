@@ -88,7 +88,7 @@ console.log(error);
             const tokenData={
                 userId:user.id
             }
-            const token =  jwt.sign(tokenData, process.env.SECRET_KEY, { expiresIn: '1d' });
+            const token =  jwt.sign(tokenData, process.env.SECRET_KEY, { expiresIn: '15d' });
 
             user=
             {
@@ -100,8 +100,7 @@ console.log(error);
                 profile:user.profile
             }
         //    {console.log(token)}
-            return res.status(200).cookie("token",token,{maxAge:1*24*60*60*1000,httpsOnly:true,secure:
-                true,sameSite:'strict'}).json({
+            return res.status(200).cookie("token",token,{maxAge:1*24*60*60*1000,httpsOnly:true,sameSite:'strict'}).json({
                 message:`Welcome back ${user.fullname}`,
                 user,
                 success:true
