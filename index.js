@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corseOptions={
-    origin:'http://localhost:5173',
+    origin:true,
     credentials:true
 }
 app.use(cors(corseOptions));
